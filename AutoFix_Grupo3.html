@@ -7,156 +7,246 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-  <div id="tituloPrincipal" class="container-fluid text-center"> <!--Avance Jose Correa-->
-        <p class="display-4 fw-bold my-5">AutoFix - Reparación de Vehículos a Domicilio</p>
-    </div>    
+    <header id="mainTitle" class="container-fluid text-center bg-light py-5">
+        <h1 class="display-4 fw-bold">AutoFix - Reparación de Vehículos a Domicilio</h1>
+    </header>
 
-    <div class="container-fluid">
-        <div id="seccionPeliculas" class="bg-image text-black text-left py-4">
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                                        <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="zoom-img-container" data-bs-toggle="modal" data-bs-target="#modalProducto1">
-                                <img src="imagenes/cambio_de_aceite.png" class="card-img-top zoom-img" alt="Cambio de Aceite">
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Cambio de Aceite</h5>
-                                <p class="card-text text-muted">Precio: $500 MXN</p>
-                            </div>
+    <section id="seccion" class="container-fluid py-5 bg-light">
+        <div class="container">
+            <h2 class="text-left mb-5">Nuestros Servicios</h2>
+            <div class="row justify-content-start g-4">
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="zoom-img-container">
+                            <img src="imagenes/cambio_de_aceite.png" class="card-img-top zoom-img" alt="Cambio de Aceite">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Cambio de Aceite</h5>
+                            <p class="card-text text-muted">Precio: $500 MXN</p>
+                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalProduct1">
+                                Ver Detalles
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="zoom-img-container" data-bs-toggle="modal" data-bs-target="#modalProducto2">
-                                <img src="imagenes/frenos.png" class="card-img-top zoom-img" alt="Revisión de Frenos">
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Revisión de Frenos</h5>
-                                <p class="card-text text-muted">Precio: $700 MXN</p>
-                            </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="zoom-img-container">
+                            <img src="imagenes/frenos.png" class="card-img-top zoom-img" alt="Revisión de Frenos">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Revisión de Frenos</h5>
+                            <p class="card-text text-muted">Precio: $700 MXN</p>
+                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalProduct2">
+                                Ver Detalles
+                            </button>
                         </div>
                     </div>
+                </div>
 
-                    <div class="col-md-4 col-sm-6 mb-4">
-                        <div class="card h-100 shadow-sm">
-                            <div class="zoom-img-container" data-bs-toggle="modal" data-bs-target="#modalProducto3">
-                                <img src="imagenes/diagnostico.png" class="card-img-top zoom-img" alt="Diagnostico Electrico">
-                            </div>
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">Diagnostico Electrico</h5>
-                                <p class="card-text text-muted">Precio: $600 MXN</p>
-                            </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="card h-100 shadow-sm">
+                        <div class="zoom-img-container">
+                            <img src="imagenes/diagnostico.png" class="card-img-top zoom-img" alt="Diagnostico Electrico">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">Diagnostico Electrico</h5>
+                            <p class="card-text text-muted">Precio: $600 MXN</p>
+                            <button type="button" class="btn btn-primary mt-auto" data-bs-toggle="modal" data-bs-target="#modalProduct3">
+                                Ver Detalles
+                            </button>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section id="solicitarReparacion" class="container-fluid py-5 bg-light">
+    <form class="needs-validation" novalidate> <div class="container">
+            <h2 class="text-left mb-4">Solicitar Reparación</h2>
+            <div class="row">
+                <div class="col-lg-10 col-md-12">
+                    <div class="mb-3">
+                        <label for="nombre" class="form-label">Nombre del Cliente</label>
+                        <input type="text" class="form-control" id="nombre" placeholder="Ej: Luis Jara Castillo" name="nombre" required>
+                        <div class="invalid-feedback">Por favor, ingrese su nombre.</div>
+                    </div>
 
+                    <div class="mb-3">
+                        <label for="tipoServicio" class="form-label">Tipo de Reparación</label>
+                        <select id="tipoServicio" name="tipoServicio" class="form-select" required>
+                            <option value="">Seleccione:</option>
+                            <option value="Aceite">Cambio de Aceite</option>
+                            <option value="Frenos">Revisión de Frenos</option>
+                            <option value="Electrico">Diagnóstico Eléctrico</option>
+                        </select>
+                        <div class="invalid-feedback">Por favor, seleccione un tipo de servicio.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="descripcion" class="form-label">Descripción:</label>
+                        <textarea class="form-control" id="descripcion" placeholder="Ej: Mi auto hace un ruido extraño al frenar..." name="descripcion" rows="5" required></textarea>
+                        <div class="invalid-feedback">Por favor, ingrese una descripción.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="hora" class="form-label">Agendar Cita:</label>
+                        <input type="datetime-local" class="form-control" id="hora" name="hora" required>
+                        <div class="invalid-feedback">Por favor, seleccione una fecha y hora.</div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+
+            <h3 class="text-left mb-4">Información de Pago (Simulado)</h3>
+            <div class="row">
+                <div class="col-lg-10 col-md-12">
+                    <div class="mb-3">
+                        <label for="tarjeta" class="form-label">Número de tarjeta</label>
+                        <input type="text" class="form-control" id="tarjeta" name="tarjeta" placeholder="**** **** **** 1234" required pattern="\d{4} \d{4} \d{4} \d{4}" maxlength="19">
+                        <div class="invalid-feedback">Por favor, ingrese un número de tarjeta válido (ej: 1234 5678 9012 3456).</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="titular" class="form-label">Nombre del titular</label>
+                        <input type="text" class="form-control" id="titular" name="titular" required>
+                        <div class="invalid-feedback">Por favor, ingrese el nombre del titular.</div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="cvv" class="form-label">CVV</label>
+                        <input type="password" class="form-control" id="cvv" name="cvv" pattern="\d{3}" maxlength="3" required>
+                        <div class="invalid-feedback">Por favor, ingrese un CVV válido (3).</div>
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Confirmar Solicitud</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</section>
+
+    <footer class="mt-auto bg-dark text-white pt-5 pb-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5>Sobre Nosotros</h5>
+                    <p>AutoFix ofrece servicios de reparación y mantenimiento automotriz a domicilio, brindando comodidad y seguridad a nuestros clientes.</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Enlaces Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-decoration-none text-white">Inicio</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Servicios</a></li>
+                        <li><a href="#" class="text-decoration-none text-white">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h5>Síguenos</h5>
+                    <ul class="list-inline social-icons">
+                        <li class="list-inline-item">
+                            <a href="#" class="text-white fs-4"><i class="bi bi-facebook"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-white fs-4"><i class="bi bi-twitter"></i></a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="#" class="text-white fs-4"><i class="bi bi-instagram"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="mb-4 border-light" />
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p class="mb-0">&copy; 2023 AutoFix. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="modal fade" id="modalProduct1" tabindex="-1" aria-labelledby="modalProduct1Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProduct1Label">Detalles del Cambio de Aceite</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Servicio completo de cambio de aceite y filtro, utilizando aceites de alta calidad adecuados para su vehículo.</p>
+                    <p>Incluye revisión de <strong>500 MXN</strong>.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                   
                 </div>
             </div>
         </div>
     </div>
-         <h2>Solicitar reparación</h2><br>
-                    </div>   
-                    <form action="#"><!--Avance Alfredo San Martin Z.-->
-                      <div class="mb-3 mt-3">
-                        <label for="nombre">Nombre Cliente:</label>
-                        <input type="text" class="form-control" id="email" placeholder="Ej: Luis Jara Castillo" name="email">
-                      </div>
-                         <div class="mb-3">
-                        <label for="material">Material:</label>
-                        <select id="material" name="material" class="form-control">
-                                        <li>
-                                            <option value="Seleccione:">Seleccione:</option>
-                                            <option value="Aceite">Cambio de aceite</option>
-                                            <option value="Frenos">Revision de frenos</option>
-                                            <option value="Electrico">Diagnostico Electrico</option>
-                                        </li>
-                                    </select>
-                      </div>
-                      <div class="mb-3">
-                        <label for="descripcion">Descripción:</label>
-                        <textarea  class="form-control" placeholder="Ej: Ingrese algun comentario" name="descripcion" rows="5" cols="10"></textarea>
-                      </div>
-                      <div class="mb-3">
-                        <label for="mail">Mail:</label>
-                        <input type="mail" class="form-control" placeholder="Ej: luis.jara@gmail.com" name="mail">
-                      </div>
-                      <div class="mb-3">
-                        <label for="hora">Agendar cita</label>
-                        <input type="datetime-local" class="form-control"  name="hora">
-                      </div>
+
+    <div class="modal fade" id="modalProduct2" tabindex="-1" aria-labelledby="modalProduct2Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProduct2Label">Detalles de la Revisión de Frenos</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Inspección detallada del sistema de frenos (pastillas, discos, líquido) y recomendaciones para su mantenimiento.</p>
+                    <p>El costo de la revisión es de <strong>$700 MXN</strong>. Piezas y reparaciones adicionales se cotizan aparte.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
                     
-                      <button type="submit" class="btn btn-primary">Confirmar Solicitud</button>
-                    </form>
-                  </div>
-            </div>     
                 </div>
             </div>
         </div>
     </div>
 
-    <h3>Información de Pago (simulado)</h3>
-
-        <div class="form-group">
-            <label for="tarjeta">Número de tarjeta</label>
-            <input type="text" id="tarjeta" name="tarjeta" placeholder="**** **** **** 1234">
+    <div class="modal fade" id="modalProduct3" tabindex="-1" aria-labelledby="modalProduct3Label" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalProduct3Label">Detalles del Diagnóstico Eléctrico</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Diagnóstico de problemas eléctricos con herramientas especializadas, incluyendo revisión de batería, alternador y cableado.</p>
+                    <p>El precio base del diagnóstico es de <strong>$600 MXN</strong>. Las reparaciones se cotizan una vez identificado el problema.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                    
+                </div>
+            </div>
         </div>
-
-        <div class="form-group">
-            <label for="titular">Nombre del titular</label>
-            <input type="text" id="titular" name="titular">
-        </div>
-
-        <div class="form-group">
-            <label for="cvv">CVV</label>
-            <input type="text" id="cvv" name="cvv">
-        </div>
-
- <footer class="mt-auto bg-dark text-white pt-5 pb-3"><!--Avance Pablo Varas-->
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 mb-3">
-          <h5>Sobre Nosotros</h5>
-          <p>AutoFix ofrece servicios de reparación y mantenimiento automotriz a domicilio, brindando comodidad y seguridad a nuestros clientes.</p>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h5>Enlaces Rápidos</h5>
-          <ul class="list-unstyled">
-            <li><a href="#" class="text-decoration-none text-white">Inicio</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Servicios</a></li>
-            <li><a href="#" class="text-decoration-none text-white">Contacto</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4 mb-3">
-          <h5>Síguenos</h5>
-          <ul class="list-inline social-icons">
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="bi bi-facebook"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="bi bi-twitter"></i></a>
-            </li>
-            <li class="list-inline-item">
-              <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <hr class="mb-4 border-light" />
-      <div class="row">
-        <div class="col-md-12 text-center">
-          <p class="mb-0">&copy; 2023 AutoFix. Todos los derechos reservados.</p>
-        </div>
-      </div>
     </div>
-  </footer>
-  
+    <div class="modal fade" id="successModal" tabindex="-1" aria-labelledby="successModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-success text-white">
+                <h5 class="modal-title" id="successModalLabel">¡Solicitud Enviada con Éxito!</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>Tu solicitud de reparación ha sido recibida y agendada.</p>
+                <p>Nos pondremos en contacto contigo en breve para confirmar los detalles.</p>
+                <div class="text-center mt-3">
+                    <i class="bi bi-check-circle-fill text-success" style="font-size: 3rem;"></i>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
